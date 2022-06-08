@@ -8,8 +8,8 @@ trigger:
 pool:
   Dev-SelfHost
 
-resources:
-- repo: self
+#resources:
+#- repo: self
 
 variables:
   # Container registry service connection established during pipeline creation
