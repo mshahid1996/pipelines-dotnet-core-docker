@@ -5,9 +5,6 @@
 trigger:
 - master
 
-pool:
-  Dev-SelfHost
-
 #resources:
 #- repo: self
 
@@ -21,6 +18,8 @@ variables:
 
   # Agent VM image name
   #vmImageName: 'ubuntu-latest'
+  pool:
+     Dev-SelfHost
 
 stages:
 - stage: Build
@@ -29,7 +28,7 @@ stages:
   - job: Build
     displayName: Build
     pool:
-      vmImage: $(vmImageName)
+      Dev-SelfHost
     steps:
     - task: Docker@2
       displayName: Build and push an image to container registry
